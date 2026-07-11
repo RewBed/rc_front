@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   const [services, setServices] = useState<ServiceItem[]>(fallbackServices);
   const pathname = usePathname();
   const isInnerPage = pathname !== "/";
+  const isHomePage = pathname === "/";
 
   const toggleNavbar = () => {
     setMenu(!menu);
@@ -58,12 +59,15 @@ const Navbar: React.FC = () => {
   const classTwo = menu
     ? "navbar-toggler navbar-toggler-right collapsed"
     : "navbar-toggler navbar-toggler-right";
+  const navbarClassName = `navbar-area${isInnerPage ? " navbar-style-2" : ""}${
+    isHomePage ? " navbar-home-solid" : ""
+  }`;
 
   return (
     <>
       <div
         id="navbar"
-        className={`navbar-area${isInnerPage ? " navbar-style-2" : ""}`}
+        className={navbarClassName}
       >
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container">

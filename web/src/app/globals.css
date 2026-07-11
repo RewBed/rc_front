@@ -50,6 +50,21 @@
   letter-spacing: 0;
 }
 
+.main-banner-content .main-banner-title {
+  font-size: 30px;
+}
+
+.navbar-area.navbar-home-solid {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  position: fixed;
+}
+
+.navbar-area.navbar-home-solid nav .navbar-brand.artel-brand,
+.navbar-area.navbar-home-solid nav .navbar-nav > .nav-item > a {
+  color: #18181b;
+}
+
 .page-title-area h2,
 .work-card .content h3,
 .portfolio-desc h2 {
@@ -346,6 +361,89 @@
   color: #ff2c57;
 }
 
+.service-insights {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  margin-top: 34px;
+}
+
+.service-insights-panel,
+.service-tech-panel {
+  background: #f6f9fc;
+  border-left: 4px solid #ff2c57;
+  padding: 30px;
+}
+
+.service-tech-panel {
+  background: #18181b;
+  border-left-color: #13c4a1;
+}
+
+.service-insights-label {
+  color: #ff2c57;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.service-tech-panel .service-insights-label {
+  color: #13c4a1;
+}
+
+.service-insights h3 {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.service-tech-panel h3 {
+  color: #ffffff;
+}
+
+.service-insights ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-insights li {
+  align-items: flex-start;
+  color: #646464;
+  display: flex;
+  gap: 12px;
+  line-height: 1.7;
+}
+
+.service-insights li + li {
+  margin-top: 14px;
+}
+
+.service-insights li i {
+  color: #13c4a1;
+  margin-top: 6px;
+}
+
+.service-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service-tech-list span {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 9px 11px;
+}
+
 @media only screen and (max-width: 767px) {
   .navbar-area nav .navbar-brand.artel-brand {
     font-size: 24px;
@@ -368,5 +466,18 @@
   .main-banner-content .btn-secondary {
     margin-left: 0;
     margin-top: 12px;
+  }
+
+  .main-banner-content .main-banner-title {
+    font-size: 30px;
+  }
+
+  .service-insights {
+    grid-template-columns: 1fr;
+  }
+
+  .service-insights-panel,
+  .service-tech-panel {
+    padding: 24px 20px;
   }
 }

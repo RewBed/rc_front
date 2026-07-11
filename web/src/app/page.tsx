@@ -29,8 +29,8 @@ export default async function Home() {
       <Navbar />
       <MainBanner />
       <Services services={services} />
-      <TechStack />
       <About />
+      <TechStack />
       <OurWorks workAreas={workAreas} />
       <WorkProcess />
       <FunFacts />

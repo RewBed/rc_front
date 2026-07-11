@@ -42,6 +42,7 @@ const MainBanner: React.FC = () => {
                     </span>
 
                     <h1
+                      className="main-banner-title"
                       data-aos="fade-in"
                       data-aos-duration="1000"
                       data-aos-delay="200"

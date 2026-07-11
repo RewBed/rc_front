@@ -13,7 +13,7 @@ const techStack = [
     iconName: "fa-solid fa-server",
     description:
       "API, бизнес-логика и интеграции на Node.js/NestJS, REST-подходе и надежной работе с данными.",
-    items: ["Node.js", "NestJS", "REST API", "PostgreSQL", "Redis"],
+    items: ["Node.js", "NestJS", "Go", "REST API", "PostgreSQL", "Redis"],
   },
   {
     title: "Интеграции",

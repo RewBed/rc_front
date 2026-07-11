@@ -12,6 +12,19 @@ const defaultContent = (service: ServiceItem) => [
   "После запуска передаем понятную документацию и рекомендации по сопровождению, развитию и проверке качества решения.",
 ];
 
+const defaultImplementationDetails = [
+  "Уточняем цели, роли, ограничения и критерии готовности до старта активной реализации.",
+  "Делим работу на понятные этапы, чтобы результат можно было проверять постепенно.",
+  "После запуска оставляем инструкции и рекомендации для дальнейшей поддержки.",
+];
+
+const defaultTechnologies = [
+  "TypeScript",
+  "REST API",
+  "PostgreSQL",
+  "Docker",
+];
+
 const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({
   service,
   relatedServices,
@@ -19,6 +32,12 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({
   const content = service.detailContent?.length
     ? service.detailContent
     : defaultContent(service);
+  const implementationDetails = service.implementationDetails?.length
+    ? service.implementationDetails
+    : defaultImplementationDetails;
+  const technologies = service.technologies?.length
+    ? service.technologies
+    : defaultTechnologies;
 
   return (
     <div className="services-details-area ptb-100">
@@ -36,6 +55,31 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({
               {content.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+
+              <div className="service-insights">
+                <div className="service-insights-panel">
+                  <span className="service-insights-label">Нюансы работы</span>
+                  <h3>Как подходим к реализации</h3>
+                  <ul>
+                    {implementationDetails.map((item) => (
+                      <li key={item}>
+                        <i className="fa-solid fa-check"></i>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="service-tech-panel">
+                  <span className="service-insights-label">Технологии</span>
+                  <h3>Что применяем</h3>
+                  <div className="service-tech-list">
+                    {technologies.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
