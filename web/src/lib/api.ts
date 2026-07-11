@@ -12,7 +12,13 @@ import {
 } from "./content-data";
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
+const API_ORIGIN = API.replace(/\/api\/?$/, "");
 type ActiveItem = { isActive?: boolean };
+
+const assetUrl = (url: string | null | undefined) =>
+  typeof url === "string" && url.startsWith("/uploads/")
+    ? `${API_ORIGIN}${url}`
+    : url;
 
 async function fetchContent<T>(path: string, fallback: T): Promise<T> {
   try {
@@ -32,11 +38,23 @@ const activeOnly = <T extends ActiveItem>(items: T[]) =>
 const normalizeExpertise = (item: ExpertiseItem): ExpertiseItem => ({
   ...item,
   detailPath: `/expertise/${item.slug}/`,
+  imageUrl: assetUrl(item.imageUrl) ?? item.imageUrl,
 });
 
 const normalizeService = (item: ServiceItem): ServiceItem => ({
   ...item,
   detailPath: `/services/${item.slug}/`,
+});
+
+const normalizeProject = (item: Project): Project => ({
+  ...item,
+  imageUrls: item.imageUrls.map((url) => assetUrl(url) ?? url),
+});
+
+const normalizeWorkArea = (item: WorkArea): WorkArea => ({
+  ...item,
+  imageUrl: assetUrl(item.imageUrl) ?? item.imageUrl,
+  shapeImageUrl: assetUrl(item.shapeImageUrl) ?? item.shapeImageUrl,
 });
 
 export const getServices = () =>
@@ -57,16 +75,26 @@ export const getService = (slug: string) =>
   );
 
 export const getProjects = () =>
-  fetchContent<Project[]>("/projects", fallbackProjects).then(activeOnly);
+  fetchContent<Project[]>("/projects", fallbackProjects).then((items) =>
+    activeOnly(items).map(normalizeProject),
+  );
 
 export const getProject = (slug: string) =>
   fetchContent<Project | null>(
     `/projects/${slug}`,
     fallbackProjects.find((project) => project.slug === slug) ?? null,
-  ).then((project) => (project?.isActive === false ? null : project));
+  ).then((project) =>
+    project?.isActive === false
+      ? null
+      : project
+        ? normalizeProject(project)
+        : null,
+  );
 
 export const getWorkAreas = () =>
-  fetchContent<WorkArea[]>("/work-areas", fallbackWorkAreas).then(activeOnly);
+  fetchContent<WorkArea[]>("/work-areas", fallbackWorkAreas).then((items) =>
+    activeOnly(items).map(normalizeWorkArea),
+  );
 
 export const getWorkArea = (slug: string) =>
   getWorkAreas().then(
