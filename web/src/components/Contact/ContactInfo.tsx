@@ -7,12 +7,14 @@ type ContactInfoProps = {
 const formatTelHref = (phone: string) => phone.replace(/[^\d+]/g, "");
 
 export default function ContactInfo({ contacts }: ContactInfoProps) {
-  const details = [
-    contacts.inn && `ИНН ${contacts.inn}`,
-    contacts.kpp && `КПП ${contacts.kpp}`,
-  ]
-    .filter(Boolean)
-    .join(" / ");
+  const requisites = [
+    ["Полное наименование", contacts.fullName],
+    ["Краткое наименование", contacts.shortName],
+    ["ИНН", contacts.inn],
+    ["КПП", contacts.kpp],
+    ["ОГРН", contacts.ogrn],
+    ["Юридический адрес", contacts.legalAddress],
+  ].filter(([, value]) => value);
 
   return (
     <div className="contact-info-area pt-100 pb-70">
@@ -29,7 +31,7 @@ export default function ContactInfo({ contacts }: ContactInfoProps) {
                   <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
                 </p>
               ) : (
-                <p>Связь по email доступна по запросу</p>
+                <p className="contact-placeholder">Email будет добавлен позже</p>
               )}
               <p>{contacts.shortName}</p>
             </div>
@@ -42,7 +44,11 @@ export default function ContactInfo({ contacts }: ContactInfoProps) {
               </div>
               <h3>Адрес</h3>
               <p>{contacts.legalAddress}</p>
-              {details && <p>{details}</p>}
+              {contacts.inn && contacts.kpp && (
+                <p>
+                  ИНН {contacts.inn} / КПП {contacts.kpp}
+                </p>
+              )}
             </div>
           </div>
 
@@ -59,11 +65,26 @@ export default function ContactInfo({ contacts }: ContactInfoProps) {
                   </a>
                 </p>
               ) : (
-                <p>Телефон доступен по запросу</p>
+                <p className="contact-placeholder">Телефон будет добавлен позже</p>
               )}
               {contacts.ogrn && <p>ОГРН {contacts.ogrn}</p>}
             </div>
           </div>
+        </div>
+
+        <div className="contact-requisites">
+          <div className="section-title">
+            <h2>Реквизиты</h2>
+          </div>
+
+          <dl className="contact-requisites-list">
+            {requisites.map(([label, value]) => (
+              <div className="contact-requisites-row" key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </div>

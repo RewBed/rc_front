@@ -208,6 +208,45 @@
   margin-top: 14px;
 }
 
+.contact-placeholder {
+  color: #646464;
+}
+
+.contact-requisites {
+  margin-top: 30px;
+}
+
+.contact-requisites .section-title {
+  margin-bottom: 28px;
+}
+
+.contact-requisites-list {
+  background-color: #fff;
+  box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+  margin: 0;
+}
+
+.contact-requisites-row {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  padding: 18px 24px;
+}
+
+.contact-requisites-row + .contact-requisites-row {
+  border-top: 1px solid #eeeeee;
+}
+
+.contact-requisites-row dt {
+  color: #18181b;
+  font-weight: 600;
+}
+
+.contact-requisites-row dd {
+  color: #646464;
+  margin-bottom: 0;
+}
+
 .work-area-related {
   margin-top: 24px;
 }
@@ -227,6 +266,12 @@
 
   .navbar-area.navbar-style-2 nav .navbar-brand.artel-brand {
     color: #18181b;
+  }
+
+  .contact-requisites-row {
+    gap: 6px;
+    grid-template-columns: 1fr;
+    padding: 16px 18px;
   }
 
   .work-area-details-image img {
