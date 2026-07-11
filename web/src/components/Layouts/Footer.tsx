@@ -1,16 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { contactSettings, type Setting } from "@/lib/content-data";
+import {
+  contactSettings,
+  fallbackServices,
+  type ServiceItem,
+  type Setting,
+} from "@/lib/content-data";
 
 type FooterProps = {
   settings: Setting[];
 };
 
+const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
+
+const activeServices = (services: ServiceItem[]) =>
+  services.filter((service) => service.isActive !== false);
+
 const Footer: React.FC<FooterProps> = ({ settings }) => {
   const currentYear = new Date().getFullYear();
   const contacts = contactSettings(settings);
+  const [services, setServices] = useState<ServiceItem[]>(fallbackServices);
+
+  useEffect(() => {
+    fetch(`${API}/services`)
+      .then((response) => (response.ok ? response.json() : fallbackServices))
+      .then((items: ServiceItem[]) => setServices(activeServices(items)))
+      .catch(() => setServices(fallbackServices));
+  }, []);
+
   return (
     <>
       <footer className="footer-area">
@@ -109,31 +128,13 @@ const Footer: React.FC<FooterProps> = ({ settings }) => {
                 <h3>Услуги</h3>
 
                 <ul className="list">
-                  <li>
-                    <Link href="/services/software-development/">
-                      Разработка ПО
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/government-projects/">
-                      Проекты для госсектора
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/bitrix24-integration/">
-                      Bitrix24
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/amocrm-integration/">
-                      amoCRM
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/sip-telephony-integration/">
-                      SIP-телефония
-                    </Link>
-                  </li>
+                  {activeServices(services).map((service) => (
+                    <li key={service.slug}>
+                      <Link href={`/services/${service.slug}/`}>
+                        {service.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

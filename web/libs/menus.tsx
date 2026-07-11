@@ -12,12 +12,8 @@ export const menus = [
 				link: "/services/government-projects/",
 			},
 			{
-				label: "Интеграция Bitrix24",
-				link: "/services/bitrix24-integration/",
-			},
-			{
-				label: "Интеграция amoCRM",
-				link: "/services/amocrm-integration/",
+				label: "Интеграция Bitrix24/amoCRM",
+				link: "/services/bitrix24-amocrm-integration/",
 			},
 			{
 				label: "SIP-телефония",

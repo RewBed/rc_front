@@ -34,8 +34,27 @@ const normalizeExpertise = (item: ExpertiseItem): ExpertiseItem => ({
   detailPath: `/expertise/${item.slug}/`,
 });
 
+const normalizeService = (item: ServiceItem): ServiceItem => ({
+  ...item,
+  detailPath: `/services/${item.slug}/`,
+});
+
 export const getServices = () =>
-  fetchContent<ServiceItem[]>("/services", fallbackServices).then(activeOnly);
+  fetchContent<ServiceItem[]>("/services", fallbackServices).then((items) =>
+    activeOnly(items).map(normalizeService),
+  );
+
+export const getService = (slug: string) =>
+  fetchContent<ServiceItem | null>(
+    `/services/${slug}`,
+    fallbackServices.find((service) => service.slug === slug) ?? null,
+  ).then((service) =>
+    service?.isActive === false
+      ? null
+      : service
+        ? normalizeService(service)
+        : null,
+  );
 
 export const getProjects = () =>
   fetchContent<Project[]>("/projects", fallbackProjects).then(activeOnly);

@@ -5,9 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MenuItem from "./MenuItem";
 import { menus } from "../../../libs/menus";
+import { fallbackServices, type ServiceItem } from "@/lib/content-data";
+
+const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
+
+const activeServices = (services: ServiceItem[]) =>
+  services.filter((service) => service.isActive !== false);
 
 const Navbar: React.FC = () => {
   const [menu, setMenu] = useState<boolean>(true);
+  const [services, setServices] = useState<ServiceItem[]>(fallbackServices);
   const pathname = usePathname();
   const isInnerPage = pathname !== "/";
 
@@ -25,6 +32,25 @@ const Navbar: React.FC = () => {
       }
     });
   }, []);
+
+  useEffect(() => {
+    fetch(`${API}/services`)
+      .then((response) => (response.ok ? response.json() : fallbackServices))
+      .then((items: ServiceItem[]) => setServices(activeServices(items)))
+      .catch(() => setServices(fallbackServices));
+  }, []);
+
+  const navigation = menus.map((item) =>
+    item.label === "Услуги"
+      ? {
+          ...item,
+          submenu: activeServices(services).map((service) => ({
+            label: service.title,
+            link: `/services/${service.slug}/`,
+          })),
+        }
+      : item,
+  );
 
   const classOne = menu
     ? "collapse navbar-collapse"
@@ -63,7 +89,7 @@ const Navbar: React.FC = () => {
 
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
-                {menus.map((menuItem) => (
+                {navigation.map((menuItem) => (
                   <MenuItem key={menuItem.label} {...menuItem} />
                 ))}
               </ul>
