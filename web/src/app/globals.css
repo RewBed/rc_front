@@ -220,6 +220,81 @@
   margin-top: 14px;
 }
 
+.tech-stack-area {
+  background: #ffffff;
+}
+
+.tech-stack-card {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(24, 24, 27, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin-bottom: 30px;
+  padding: 32px 28px;
+  transition: 0.5s;
+}
+
+.tech-stack-card:hover {
+  border-color: #ff2c57;
+  box-shadow: 0 16px 40px rgba(24, 24, 27, 0.1);
+  transform: translateY(-6px);
+}
+
+.tech-stack-icon {
+  align-items: center;
+  background: #f6f9fc;
+  border-radius: 6px;
+  color: #ff2c57;
+  display: inline-flex;
+  font-size: 28px;
+  height: 58px;
+  justify-content: center;
+  margin-bottom: 22px;
+  width: 58px;
+}
+
+.tech-stack-card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.tech-stack-card p {
+  color: #646464;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.tech-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tech-stack-tags span {
+  background: #f6f9fc;
+  border-radius: 4px;
+  color: #18181b;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 8px 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .tech-stack-card {
+    padding: 26px 22px;
+  }
+
+  .tech-stack-card h3 {
+    font-size: 20px;
+  }
+}
+
 .contact-placeholder {
   color: #646464;
 }

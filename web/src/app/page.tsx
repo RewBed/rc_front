@@ -1,6 +1,7 @@
 import Navbar from "@/components/Layouts/Navbar";
 import MainBanner from "@/components/HomePages/DefaultHome/MainBanner";
 import Services from "@/components/HomePages/DefaultHome/Services";
+import TechStack from "@/components/HomePages/DefaultHome/TechStack";
 import About from "@/components/HomePages/DefaultHome/About";
 import OurWorks from "@/components/HomePages/DefaultHome/OurWorks";
 import WorkProcess from "@/components/HomePages/DefaultHome/WorkProcess";
@@ -28,6 +29,7 @@ export default async function Home() {
       <Navbar />
       <MainBanner />
       <Services services={services} />
+      <TechStack />
       <About />
       <OurWorks workAreas={workAreas} />
       <WorkProcess />
