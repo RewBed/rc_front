@@ -1,0 +1,240 @@
+.navbar-area nav .navbar-brand.artel-brand,
+.single-footer-widget .logo .artel-brand {
+  color: #18181b;
+  font-family: var(--font-saira);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.navbar-area.navbar-style-2 nav .navbar-brand.artel-brand {
+  color: #ffffff;
+}
+
+.navbar-area.navbar-style-2.is-sticky nav .navbar-brand.artel-brand {
+  color: #18181b;
+}
+
+.navbar-area.navbar-style-2 nav .navbar-nav .nav-item .dropdown-menu li a {
+  color: #18181b;
+}
+
+.navbar-area.navbar-style-2
+  nav
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  li
+  a:hover,
+.navbar-area.navbar-style-2
+  nav
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  li
+  a:focus,
+.navbar-area.navbar-style-2
+  nav
+  .navbar-nav
+  .nav-item
+  .dropdown-menu
+  li
+  a.active {
+  color: #ff2c9c;
+}
+
+.main-banner-content h1,
+.section-title h2,
+.cta-content h3 {
+  letter-spacing: 0;
+}
+
+.page-title-area h2,
+.work-card .content h3,
+.portfolio-desc h2 {
+  overflow-wrap: anywhere;
+}
+
+.main-banner-content .btn-secondary {
+  margin-left: 15px;
+}
+
+.single-blog-item .blog-post-content h3 {
+  min-height: 72px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tech-tag {
+  background: #f6f9fc;
+  border-radius: 4px;
+  color: #18181b;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 7px 10px;
+}
+
+.single-blog-item .blog-image img {
+  aspect-ratio: 510 / 383;
+  object-fit: cover;
+  width: 100%;
+}
+
+.single-blog-item .blog-image .post-tag button {
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+}
+
+.expertise-filter {
+  margin-bottom: 40px;
+}
+
+.expertise-filter .widget_tag_cloud .tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertise-filter .widget_tag_cloud .tagcloud button {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  color: #646464;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px !important;
+  line-height: 1.2;
+  padding: 8px 14px;
+  transition: 0.5s;
+}
+
+.expertise-filter .widget_tag_cloud .tagcloud button:hover,
+.expertise-filter .widget_tag_cloud .tagcloud button.current {
+  background: #ff2c57;
+  border-color: #ff2c57;
+  color: #ffffff;
+}
+
+.expertise-empty {
+  background: #f8f9fa;
+  padding: 36px;
+  text-align: center;
+}
+
+.expertise-empty h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.expertise-empty p {
+  margin-bottom: 0;
+}
+
+.expertise-details .article-img img {
+  aspect-ratio: 1000 / 600;
+  object-fit: cover;
+  width: 100%;
+}
+
+.expertise-related {
+  margin-top: 40px;
+}
+
+.expertise-related > h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.project-work-card img {
+  aspect-ratio: 510 / 700;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-work-card .content p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.portfolio-details-image img,
+.work-area-details-image img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.work-area-details-image img {
+  display: block;
+  max-height: 420px;
+}
+
+.project-detail-list {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.project-detail-list li {
+  color: #646464;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.contact-form .btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.contact-form-status {
+  color: #13c4a1;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 14px;
+}
+
+.work-area-related {
+  margin-top: 24px;
+}
+
+.work-area-related a {
+  color: #646464;
+}
+
+.work-area-related a:hover {
+  color: #ff2c57;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-area nav .navbar-brand.artel-brand {
+    font-size: 24px;
+  }
+
+  .navbar-area.navbar-style-2 nav .navbar-brand.artel-brand {
+    color: #18181b;
+  }
+
+  .work-area-details-image img {
+    max-height: 300px;
+  }
+
+  .main-banner-content .btn-secondary {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}

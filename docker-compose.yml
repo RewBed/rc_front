@@ -1,0 +1,25 @@
+services:
+  rc-front:
+    build:
+      context: ./web
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.155-212-209-221.sslip.io/api}
+    image: rc-front:latest
+    container_name: rc-front
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.155-212-209-221.sslip.io/api}
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+      VIRTUAL_HOST: ${FRONT_VIRTUAL_HOST:-155-212-209-221.sslip.io}
+      LETSENCRYPT_HOST: ${FRONT_LETSENCRYPT_HOST:-155-212-209-221.sslip.io}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kulishov_as@internet.ru}
+      VIRTUAL_PORT: 3000
+    ports:
+      - "${RC_FRONT_PORT:-3000}:3000"
+    networks: [rc_network]
+    restart: unless-stopped
+
+networks:
+  rc_network:
+    name: proxy-network-v1
+    external: true

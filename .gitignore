@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+web/node_modules/
+template/**/node_modules/
+
+# build outputs
+.next/
+web/.next/
+template/**/.next/
+out/
+web/out/
+template/**/out/
+build/
+web/build/
+template/**/build/
+coverage/
+
+# local environment
+.env
+.env.local
+.env.*.local
+web/.env.local
+web/.env.*.local
+
+# logs and caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+next-env.d.ts
+template/**/next-env.d.ts
+
+# system/editor
+.DS_Store
+.idea/
+.vscode/

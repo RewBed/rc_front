@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pungent - React Nextjs Multipurpose Startup & Digital Agency Template</title>
+        <link href="css/collection.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400" rel="stylesheet" type="text/css">
+        <script src="js/other.js"></script>
+        <script src="js/custom.js"></script>
+    </head>
+
+    <body data-spy="scroll" data-target=".sidebar" data-offset="200">
+        <aside class="sidebar sidebar-boxed sidebar-dark">  
+            <ul class="nav sidenav dropable">
+                <li><a href="#introduction" title="Introduction">Introduction</a></li>
+                <li><a href="#getting_started" title="Setup Development Envrionment">Setup Development Environment</a></li>
+                <li><a href="#documenter_cover">Pages and Components Info</a></li>
+                <li><a href="#dependencies" title="Dependencies">Dependencies</a></li> 
+                <li><a href="#color_change_option" title="Color Change Option">Color Change Option</a></li>
+                <li><a href="#run_scss_file" title="Run The SCSS">Run The SCSS</a></li>
+                <li><a href="#contact" title="Contact Form">Contact Form Setup</a></li> 
+                <li><a href="#credits" title="Credits">Credits</a></li>
+                <li><a href="#supports" title="Support">Support</a></li>
+            </ul>
+        </aside>
+
+        <header class="site-header navbar-transparent"> 
+            <div class="banner auto-size" style="background-color: #455aa2">
+                <div class="container-fluid">
+                    <h1><strong>Pungent - React</strong> Documentation</h1>
+                </div>
+            </div>
+        </header>
+        
+        <main class="container-fluid"> 
+            <article class="main-content" role="main">
+                <section id="introduction">
+                    <div class="page-header">
+                        <h3>Introduction</h3>
+                    </div>
+                    <p>Pungent is a New Modern Responsive React Next template. It is built with ReactJS, NextJS, Bootstrap, and Sass. It is offering multi-niche portfolio demos for Creative Agency, IT Agency, SEO Marketing Agency, Videography Agency, Business Agency, Software Startup, Digital Marketing, Business Consulting, Freelancer Portfolio, App Showcase, Personal Portfolio, SaaS Startup & Cyber Security Agency, IT Startups, IT Agency, and IT Solutions Company, etc. It looks engaging and attractive on all screens and devices, including Windows, Mac, iOS, Android, etc.</p>
+                </section>
+
+                <section id="getting_started">
+                    <div class="page-header">
+                        <h3>Setup Development Environment</h3>
+                    </div>
+                    <p>
+                        To kickstart the development of the web app with Pungent, at first need to setup the react development environment.
+                    </p>
+                    <p>Following tools are needed to setup a react dev environment:</p>
+                    <ul>
+                        <li><b>Node JS</b></li>
+                        <p>
+                            NodeJS works as a node package manager behind the scene. It is recommended to download and install the latest version of Node JS from its official site <a href="https://nodejs.org/en/download/" target="_blank">https://nodejs.org/en/download/</a>
+                        </p>
+                    </ul>
+                    <div class="page-header">
+                        <h3>Preparation</h3>
+                    </div>
+                    <p>
+                        You'll need to install <a href="https://nodejs.org/en/download/" target="_blank">Node.js (Recommended Version)</a> (NPM comes along with it) and serve (a NPM package)
+                    </p>
+
+                    <p>Use command line tool i.e. powershell or terminal and navigate to the project(Pungent) root. This is powershell in windows and terminal on mac/linux.</p>
+
+                    <strong>Let's have a look on the setup process:</strong> <br>
+                    <p>Use terminal and navigate to the project root.</p>
+                    <p>Then run : <code class="language-markup">npm install --force</code></p>
+                    <p>Then run : <code class="language-markup">npm run dev</code></p>
+					<p>It'll return something like this in the console:</p>
+					<p>> project@2.4.0 dev drive:\project</p>
+					<p>> next</p>
+					<p>[ wait ] starting the development server ...</p>
+					<p>[ ready ] started server on http://localhost:3000 ...</p>
+					<p>[ event ] compiled successfully</p>
+                    <p>Now, in the browser go to <a href="localhost:3000">localhost:3000</a></p>
+
+                    <div class="page-header">
+                        <h3>For Production Build</h3>
+                    </div>
+                    <p>Run: <code class="language-markup">npm run build</code></p>
+                    <p>Then Run : <code class="language-markup">npm run start</code></p>
+					<p>See the official next.js doc <a href="https://nextjs.org/docs/deployment#other-hosting-options" target="_blank">here</a></p>
+                </section>
+
+                <section id="documenter_cover">
+                    <div class="page-header">
+                        <h3>Pages and Components Info</h3>
+                    </div>
+                    <div id="documenter_buttons"></div>
+					<ul>
+						<li>Default Home Page (<b>/src/app/page.tsx</b>)</li>
+						<li>Creative Agency Home Page (<b>/src/app/creative-agency/page.tsx</b>)</li> 
+						<li>IT Agency Home Page (<b>/src/app/it-agency/page.tsx</b>)</li> 
+						<li>Marketing Agency Home Page (<b>/src/app/marketing-agency/page.tsx</b>)</li> 
+						<li>Portfolio Agency Home Page (<b>/src/app/portfolio-agency/page.tsx</b>)</li> 
+						<li>Studio Agency Home Page (<b>/src/app/studio-agency/page.tsx</b>)</li> 
+						<li>Business Agency Home Page (<b>/src/app/business-agency/page.tsx</b>)</li> 
+						<li>Startup Agency Home Page (<b>/src/app/startup-agency/page.tsx</b>)</li> 
+						<li>Default Home Page Two (<b>/src/app/default-home-2/page.tsx</b>)</li>
+						<li>Creative Agency Home Page Two (<b>/src/app/creative-agency-2/page.tsx</b>)</li> 
+						<li>IT Agency Home Page Two (<b>/src/app/it-agency-2/page.tsx</b>)</li> 
+						<li>Marketing Agency Home Page Two (<b>/src/app/marketing-agency-2/page.tsx</b>)</li> 
+						<li>Portfolio Agency Home Page Two (<b>/src/app/portfolio-agency-2/page.tsx</b>)</li> 
+						<li>Studio Agency Home Page Two (<b>/src/app/studio-agency-2/page.tsx</b>)</li> 
+						<li>Business Agency Home Page Two (<b>/src/app/business-agency-2/page.tsx</b>)</li> 
+						<li>Startup Agency Home Page Two (<b>/src/app/startup-agency-2/page.tsx</b>)</li> 
+						<li>Etc and more...</li>
+					</ul>
+		
+                    <h6 style="margin-top:20px"><strong>Common Components:</strong></h6>
+                    <ul>
+                        <li>Navbar Default (<b>/src/components/Layouts/Navbar.tsx</b>)</li>
+                        <li>Navbar Two (<b>/src/components/Layouts/NavbarTwo.tsx</b>)</li>
+                        <li>Navbar Three (<b>/src/components/Layouts/NavbarThree.tsx</b>)</li>
+                        <li>Footer (<b>/src/components/Layouts/Footer.tsx</b>)</li>
+                        <li>Cta Area (<b>/src/components/Common/CtaArea.tsx</b>)</li>
+                        <li>Cta Area Two (<b>/src/components/Common/CtaAreaTwo.tsx</b>)</li>
+                        <li>Feedback (<b>/src/components/Common/Feedback.tsx</b>)</li>
+                        <li>Feedback Two (<b>/src/components/Common/FeedbackTwo.tsx</b>)</li>
+						<li>Fun Facts (<b>/src/components/Common/FunFacts.tsx</b>)</li>
+                        <li>Fun Facts Two (<b>/src/components/Common/FunFactsTwo.tsx</b>)</li>
+                        <li>Latest News (<b>/src/components/Common/LatestNews.tsx</b>)</li>
+						<li>Latest News Slider (<b>/src/components/Common/LatestNewsSlider.tsx</b>)</li>
+                        <li>Latest News Slider Two (<b>/src/components/Common/LatestNewsSliderTwo.tsx</b>)</li>
+                        <li>Newsletter (<b>/src/components/Common/Newsletter.tsx</b>)</li>
+						<li>Page Banner (<b>/src/components/Common/PageBanner.tsx</b>)</li>
+                        <li>Partner (<b>/src/components/Common/Partner.tsx</b>)</li>
+                        <li>Partner Two (<b>/src/components/Common/PartnerTwo.tsx</b>)</li>
+						<li>Team (<b>/src/components/Common/Team.tsx</b>)</li>
+						<li>Team Style Two (<b>/src/components/Common/TeamStyleTwo.tsx</b>)</li>
+						<li>Team Style Three (<b>/src/components/Common/TeamStyleThree.tsx</b>)</li>
+						<li>Team Style Four (<b>/src/components/Common/TeamStyleFour.tsx</b>)</li>
+						<li>Etc and more...</li>
+                    </ul>
+                </section>
+
+                <section id="dependencies">
+                    <div class="page-header">
+                        <h3>Dependencies</h3>
+                    </div>
+                    <p> Here are the <strong>dependencies</strong> list which being used in the Pungent React Template:</p>
+                    <pre class="line-numbers">
+<code class="language-markup"> 
+"dependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/fslightbox-react": "^1.7.7",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "axios": "^1.11.0",
+    "fslightbox-react": "^2.0.0",
+    "next": "^16.0.7",
+    "nodemailer": "^7.0.5",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-tabs": "^6.0.2",
+    "sass": "^1.70.0",
+    "sharp": "^0.34.3",
+    "sweetalert2": "^11.22.2",
+    "sweetalert2-react-content": "^5.1.0",
+    "swiper": "^12.0.3"
+},
+"devDependencies": {
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "eslint": "^9.32.0",
+    "eslint-config-next": "^16.0.7",
+    "typescript": "^5"
+}
+</code>
+                    </pre class="brush:css">
+                </section>
+				
+				<section id="color_change_option">
+					<div class="page-header">
+						<h3 style="margin-top: 0; margin-bottom: 12px;">Main Color Change Option</h3>
+					</div>
+					<p>File path: public/styles/style.scss</p>
+
+<pre class="line-numbers">
+<code class="language-css">
+$main-color: #ff2c9c; (All Primary Color)
+$paragraph-color: #18181b; (All Paragraph Color)
+</code>
+</pre>
+<p><b>Note:</b> After SCSS file run then it will be work</p>
+                </section>
+				
+				<section id="run_scss_file">
+                    <div class="page-header">
+                        <h3>How to Run The SCSS File</h3>
+                    </div>
+					<p>Please open the file Visual Studio Code Editor. And follow the video tutorial.</p>
+					<p>Here the Link: <a href="https://www.youtube.com/watch?v=0MWmv1Gvv5w" target="_blank">https://www.youtube.com/watch?v=0MWmv1Gvv5w</a></p>
+                </section>
+				
+				<section id="contact">
+                    <div class="page-header">
+                        <h3 style="margin-top: 0; margin-bottom: 12px;">Contact Form Setup</h3>
+                    </div>
+                    <p>
+						Please create the SendGrid API key follow the below link: <br>
+						<a href="https://sendgrid.com/docs/ui/account-and-settings/api-keys/" target="_blank">https://sendgrid.com/docs/ui/account-and-settings/api-keys/</a>
+					</p>
+                    <p>Please follow the screenshot instruction file <strong>path: src/app/api/contact/route.js</strong></p>
+					<img src="img/email.png">
+					<br>
+					<br>
+					<p>Following by screenshot update the baseUrl</p>
+					<img src="img/baseUrl.png">
+                </section>
+				
+                <section id="credits">
+                    <div class="page-header">
+                        <h3>Credits</h3>
+                    </div>
+                    <strong>Images</strong><br>
+                    <a href="https://unsplash.com/" target="_blank">Unsplash</a><br />
+                    <a href="https://burst.shopify.com/" target="_blank">Burst</a><br />
+                    <a href="https://www.freepik.com/" target="_blank">Freepick</a><br />
+                    <div class="height-15"></div>
+                    <strong>Packages</strong><br>
+                    <a href="https://nextjs.org/" target="_blank">Next.js</a><br />
+                    <a href="https://www.npmjs.com/package/react-dom" target="_blank">ReactDom</a><br />
+                    <a href="https://fonts.google.com/" target="_blank">Google Fonts</a><br />
+                    <a href="https://github.com/springload/react-accessible-accordion" target="_blank">react-accessible-accordion</a><br />
+                </section>
+                
+                <section id="supports">
+                    <div class="page-header">
+                        <h3 style="margin-top: 0; margin-bottom: 12px;">24-Hour Turnaround Support:</h3>
+                    </div>
+					<p>Quick, Dedicated &amp; Professional Support!</p>
+					<p>We only provide support through our ticketing system. Please submit your ticket by visiting the <a href="https://support.envytheme.com/" target="_new">EnvyTheme Support System</a>.</p>
+					<p>For any pre-purchase query, please use live chat on the item demo site also, email, and the item’s comment section on ThemeForest. Thanks!</p>
+                </section>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container-fluid"> <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <p>Copyright Pungent All right reserved by <a href="https://envytheme.com/" target="_blank">EnvyTheme.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
