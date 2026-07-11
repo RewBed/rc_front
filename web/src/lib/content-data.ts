@@ -308,7 +308,7 @@ export const fallbackExpertise: ExpertiseItem[] = [
     slug: "crm-integration",
     title: "Как понять, что бизнесу уже нужна CRM-интеграция",
     category: "CRM",
-    tags: ["CRM", "Интеграции", "Автоматизация"],
+    tags: ["CRM", "Интеграции"],
     publishedLabel: "Разбор",
     shortText:
       "Если заявки живут в таблицах, звонки не связаны со сделками, а руководитель собирает отчеты вручную, интеграция быстро окупает себя.",
@@ -327,7 +327,7 @@ export const fallbackExpertise: ExpertiseItem[] = [
     slug: "government-projects",
     title: "Что важно заложить в разработку проекта для госсектора",
     category: "Госсектор",
-    tags: ["Госсектор", "Документация", "Приемка"],
+    tags: ["Разработка", "Контент"],
     publishedLabel: "Подход",
     shortText:
       "Требования, документация, контрольные точки и приемка должны быть понятны до начала разработки, иначе сроки и бюджет быстро становятся риском.",
@@ -345,8 +345,8 @@ export const fallbackExpertise: ExpertiseItem[] = [
   {
     slug: "bitrix24-or-amocrm",
     title: "Bitrix24 или amoCRM: как выбирать систему под отдел продаж",
-    category: "Автоматизация",
-    tags: ["Bitrix24", "amoCRM", "Продажи"],
+    category: "CRM",
+    tags: ["CRM", "Интеграции"],
     publishedLabel: "Сравнение",
     shortText:
       "Выбор зависит не от популярности платформы, а от сценариев продаж, роли телефонии, отчетности, прав доступа и будущих интеграций.",
@@ -364,8 +364,8 @@ export const fallbackExpertise: ExpertiseItem[] = [
   {
     slug: "design-and-development",
     title: "Почему дизайн лучше делать вместе с разработкой",
-    category: "Дизайн",
-    tags: ["Дизайн", "Разработка", "Интерфейсы"],
+    category: "Контент",
+    tags: ["Разработка", "Контент"],
     publishedLabel: "Практика",
     shortText:
       "Интерфейс проще запускать, когда макеты учитывают реальные данные, состояния, адаптивность, ограничения CMS и будущую поддержку продукта.",

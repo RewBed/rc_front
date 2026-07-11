@@ -12,21 +12,11 @@ type ExpertiseGridProps = {
 
 const postsPerPage = 6;
 
-const getTags = (item: ExpertiseItem) => {
-  const tags = item.tags?.length ? item.tags : [item.category];
-  return Array.from(new Set([item.category, ...tags]));
-};
+const getTags = (item: ExpertiseItem) => Array.from(new Set(item.tags ?? []));
 
 const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = null }) => {
   const [query, setQuery] = useState("");
-  const [activeTag, setActiveTag] = useState<string | null>(initialTag);
   const [currentPage, setCurrentPage] = useState(1);
-
-  const tags = useMemo(() => {
-    const tagSet = new Set<string>();
-    expertise.forEach((item) => getTags(item).forEach((tag) => tagSet.add(tag)));
-    return Array.from(tagSet);
-  }, [expertise]);
 
   const categories = useMemo(() => {
     const categoryMap = new Map<string, number>();
@@ -36,11 +26,25 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
     return Array.from(categoryMap, ([name, count]) => ({ name, count }));
   }, [expertise]);
 
+  const tags = useMemo(() => {
+    const tagSet = new Set<string>();
+    expertise.forEach((item) => getTags(item).forEach((tag) => tagSet.add(tag)));
+    return Array.from(tagSet);
+  }, [expertise]);
+
+  const initialCategory = categories.some((category) => category.name === initialTag)
+    ? initialTag
+    : null;
+  const initialStandaloneTag = initialCategory ? null : initialTag;
+  const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
+  const [activeTag, setActiveTag] = useState<string | null>(initialStandaloneTag);
+
   const filteredExpertise = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return expertise.filter((item) => {
       const itemTags = getTags(item);
+      const matchesCategory = !activeCategory || item.category === activeCategory;
       const matchesTag = !activeTag || itemTags.includes(activeTag);
       const haystack = [
         item.title,
@@ -52,9 +56,13 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
         .join(" ")
         .toLowerCase();
 
-      return matchesTag && (!normalizedQuery || haystack.includes(normalizedQuery));
+      return (
+        matchesCategory &&
+        matchesTag &&
+        (!normalizedQuery || haystack.includes(normalizedQuery))
+      );
     });
-  }, [activeTag, expertise, query]);
+  }, [activeCategory, activeTag, expertise, query]);
 
   const totalPages = Math.max(1, Math.ceil(filteredExpertise.length / postsPerPage));
   const page = Math.min(currentPage, totalPages);
@@ -63,8 +71,14 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
     page * postsPerPage,
   );
 
-  const selectTag = (tag: string | null) => {
-    setActiveTag(tag);
+  const selectCategory = (category: string | null) => {
+    setActiveCategory(category);
+    setActiveTag(null);
+    setCurrentPage(1);
+  };
+
+  const selectTag = (tag: string) => {
+    setActiveTag((value) => (value === tag ? null : tag));
     setCurrentPage(1);
   };
 
@@ -97,7 +111,7 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
                       </Link>
 
                       <div className="post-tag">
-                        <button type="button" onClick={() => selectTag(item.category)}>
+                        <button type="button" onClick={() => selectCategory(item.category)}>
                           {item.category}
                         </button>
                       </div>
@@ -124,7 +138,7 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
                 <div className="col-lg-12">
                   <div className="expertise-empty">
                     <h3>Материалы не найдены</h3>
-                    <p>Измените поисковый запрос или выберите другой тег.</p>
+                    <p>Измените поисковый запрос, категорию или тег.</p>
                   </div>
                 </div>
               )}
@@ -231,8 +245,8 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
                     <li>
                       <button
                         type="button"
-                        className={!activeTag ? "current" : ""}
-                        onClick={() => selectTag(null)}
+                        className={!activeCategory ? "current" : ""}
+                        onClick={() => selectCategory(null)}
                       >
                         Все <span className="post-count">({expertise.length})</span>
                       </button>
@@ -241,8 +255,8 @@ const ExpertiseGrid: React.FC<ExpertiseGridProps> = ({ expertise, initialTag = n
                       <li key={category.name}>
                         <button
                           type="button"
-                          className={activeTag === category.name ? "current" : ""}
-                          onClick={() => selectTag(category.name)}
+                          className={activeCategory === category.name ? "current" : ""}
+                          onClick={() => selectCategory(category.name)}
                         >
                           {category.name} <span className="post-count">({category.count})</span>
                         </button>
