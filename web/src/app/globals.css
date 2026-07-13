@@ -254,6 +254,11 @@
   width: 100%;
 }
 
+.project-gallery-image img {
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+
 .work-area-details-image img {
   display: block;
   max-height: 420px;

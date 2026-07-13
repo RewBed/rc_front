@@ -17,13 +17,14 @@ const fallbackImages = [
   "/images/portfolio/portfolio3.jpg",
   "/images/portfolio/portfolio4.jpg",
   "/images/portfolio/portfolio5.jpg",
+  "/images/portfolio/portfolio6.jpg",
 ];
 
 const galleryImages = (project: Project) => {
   const uniqueImages = Array.from(
     new Set([...project.imageUrls, ...fallbackImages]),
   );
-  return uniqueImages.slice(0, 5);
+  return uniqueImages.slice(0, 6);
 };
 
 const BulletList = ({ items }: { items: string[] }) => {
@@ -47,48 +48,14 @@ const ProjectDetailsContent: React.FC<ProjectDetailsContentProps> = ({
   return (
     <div className="portfolio-details ptb-100">
       <div className="container">
-        <div className="row m-0">
-          <div className="col-lg-4 col-md-6 p-0">
-            <div className="portfolio-details-image">
-              <img src={images[0]} alt={project.title} width={480} height={350} />
-            </div>
-
-            <div className="portfolio-details-image">
-              <img src={images[1]} alt={project.title} width={480} height={350} />
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 p-0">
-            <div className="portfolio-details-image">
-              <img src={images[2]} alt={project.title} width={480} height={700} />
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-12 p-0">
-            <div className="row">
-              <div className="col-lg-12 col-md-6 pr_0">
-                <div className="portfolio-details-image">
-                  <img
-                    src={images[3]}
-                    alt={project.title}
-                    width={480}
-                    height={350}
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-12 col-md-6 pl_0">
-                <div className="portfolio-details-image">
-                  <img
-                    src={images[4]}
-                    alt={project.title}
-                    width={480}
-                    height={350}
-                  />
-                </div>
+        <div className="row m-0 project-gallery-grid">
+          {images.map((image) => (
+            <div className="col-lg-4 col-md-6 p-0" key={image}>
+              <div className="portfolio-details-image project-gallery-image">
+                <img src={image} alt={project.title} width={480} height={360} />
               </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="row">
