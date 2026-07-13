@@ -79,6 +79,14 @@
   opacity: 0.62;
 }
 
+.single-case-studies .content {
+  background: rgba(82, 82, 91, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(24, 24, 27, 0.18);
+  max-width: calc(100% - 60px);
+}
+
 .main-banner-content .btn-secondary {
   margin-left: 15px;
 }
