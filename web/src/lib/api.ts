@@ -5,11 +5,11 @@ import {
   type Setting,
   type WorkArea,
   fallbackExpertise,
-  fallbackProjects,
   fallbackServices,
   fallbackSettings,
   fallbackWorkAreas,
 } from "./content-data";
+import { projectPortfolioData as fallbackProjects } from "./project-portfolio-data";
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
 const API_ORIGIN = API.replace(/\/api\/?$/, "");
