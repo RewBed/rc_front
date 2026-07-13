@@ -23,7 +23,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle={service.title} BGImage="/images/page-banner4.jpg" />
+      <PageBanner
+        pageTitle={service.title}
+        BGImage="/images/page-banner-services-artel.jpg"
+      />
       <ServiceDetailsContent
         service={service}
         relatedServices={services.filter((item) => item.slug !== service.slug)}

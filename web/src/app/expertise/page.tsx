@@ -19,7 +19,10 @@ export default async function ExpertisePage({ searchParams }: ExpertisePageProps
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle="Экспертиза" BGImage="/images/page-banner3.jpg" />
+      <PageBanner
+        pageTitle="Экспертиза"
+        BGImage="/images/page-banner-expertise-artel.jpg"
+      />
       <ExpertiseGrid expertise={expertise} initialTag={query?.tag ?? null} />
       <CtaArea />
       <Footer settings={settings} />

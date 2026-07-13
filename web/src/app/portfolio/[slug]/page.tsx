@@ -22,7 +22,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle={project.title} BGImage="/images/page-banner2.jpg" />
+      <PageBanner
+        pageTitle={project.title}
+        BGImage="/images/page-banner-projects-artel.jpg"
+      />
       <ProjectDetailsContent project={project} />
       <CtaArea />
       <Footer settings={settings} />

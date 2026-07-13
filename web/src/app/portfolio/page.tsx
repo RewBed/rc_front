@@ -11,7 +11,10 @@ export default async function PortfolioPage() {
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle="Проекты" BGImage="/images/page-banner3.jpg" />
+      <PageBanner
+        pageTitle="Проекты"
+        BGImage="/images/page-banner-projects-artel.jpg"
+      />
       <ProjectPortfolioGrid projects={projects} />
       <CtaArea />
       <Footer settings={settings} />

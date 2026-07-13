@@ -71,6 +71,14 @@
   overflow-wrap: anywhere;
 }
 
+.page-title-area h2 {
+  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+}
+
+.page-title-area::before {
+  opacity: 0.62;
+}
+
 .main-banner-content .btn-secondary {
   margin-left: 15px;
 }

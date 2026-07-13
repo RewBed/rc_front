@@ -13,7 +13,10 @@ export default async function ContactPage() {
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle="Контакты" BGImage="/images/page-banner1.jpg" />
+      <PageBanner
+        pageTitle="Контакты"
+        BGImage="/images/page-banner-contacts-artel.jpg"
+      />
       <ContactInfo contacts={contacts} />
       <ContactForm email={contacts.email} />
       <Footer settings={settings} />

@@ -16,7 +16,7 @@ export default async function WorkAreasPage() {
       <Navbar />
       <PageBanner
         pageTitle="С какими задачами работаем"
-        BGImage="/images/page-banner1.jpg"
+        BGImage="/images/page-banner-tasks-artel.jpg"
       />
       <OurWorks workAreas={workAreas} showViewMore={false} />
       <CtaArea />

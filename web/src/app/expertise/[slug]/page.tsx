@@ -25,7 +25,10 @@ export default async function ExpertiseDetailsPage({
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle={current.title} BGImage="/images/page-banner3.jpg" />
+      <PageBanner
+        pageTitle={current.title}
+        BGImage="/images/page-banner-expertise-artel.jpg"
+      />
       <ExpertiseDetailsContent current={current} allItems={allItems} />
       <CtaArea />
       <Footer settings={settings} />

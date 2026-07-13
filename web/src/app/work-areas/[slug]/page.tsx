@@ -26,7 +26,10 @@ export default async function WorkAreaPage({ params }: WorkAreaPageProps) {
   return (
     <>
       <Navbar />
-      <PageBanner pageTitle={workArea.title} BGImage="/images/page-banner4.jpg" />
+      <PageBanner
+        pageTitle={workArea.title}
+        BGImage="/images/page-banner-tasks-artel.jpg"
+      />
       <WorkAreaDetailsContent
         workArea={workArea}
         relatedWorkAreas={relatedWorkAreas}
