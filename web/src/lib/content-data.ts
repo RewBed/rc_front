@@ -123,6 +123,7 @@ export const fallbackServices: ServiceItem[] = [
       "NestJS",
       "PostgreSQL",
       "REST API",
+      "44/223-ФЗ",
       "Docker",
       "Nginx",
       "Linux",

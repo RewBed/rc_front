@@ -3,15 +3,15 @@ services:
     build:
       context: ./web
       args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.155-212-209-221.sslip.io/api}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.artelcode.ru/api}
     image: rc-front:latest
     container_name: rc-front
     environment:
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.155-212-209-221.sslip.io/api}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.artelcode.ru/api}
       HOSTNAME: 0.0.0.0
       PORT: 3000
-      VIRTUAL_HOST: ${FRONT_VIRTUAL_HOST:-155-212-209-221.sslip.io}
-      LETSENCRYPT_HOST: ${FRONT_LETSENCRYPT_HOST:-155-212-209-221.sslip.io}
+      VIRTUAL_HOST: ${FRONT_VIRTUAL_HOST:-artelcode.ru}
+      LETSENCRYPT_HOST: ${FRONT_LETSENCRYPT_HOST:-artelcode.ru}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kulishov_as@internet.ru}
       VIRTUAL_PORT: 3000
     ports:

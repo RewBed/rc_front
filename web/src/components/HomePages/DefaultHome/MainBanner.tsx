@@ -61,25 +61,27 @@ const MainBanner: React.FC = () => {
                       задачами для государственных закупок.
                     </p>
                     
-                    <Link 
-                      href="/contact-us/" 
-                      className="btn btn-primary"
-                      data-aos="fade-in"
-                      data-aos-duration="1000"
-                      data-aos-delay="400"
-                    >
-                      Обсудить проект
-                    </Link>
+                    <div className="main-banner-actions">
+                      <Link
+                        href="/contact-us/"
+                        className="btn btn-primary"
+                        data-aos="fade-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                      >
+                        Обсудить проект
+                      </Link>
 
-                    <Link
-                      href="#services"
-                      className="btn btn-secondary"
-                      data-aos="fade-in"
-                      data-aos-duration="1000"
-                      data-aos-delay="500"
-                    >
-                      Наши услуги
-                    </Link>
+                      <Link
+                        href="#services"
+                        className="btn btn-secondary"
+                        data-aos="fade-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="500"
+                      >
+                        Наши услуги
+                      </Link>
+                    </div>
                   </div>
                 </div>
 

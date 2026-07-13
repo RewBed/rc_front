@@ -12,6 +12,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter, Saira } from "next/font/google";
+import CookieConsent from "@/components/Common/CookieConsent";
 import AosAnimation from "@/components/Layouts/AosAnimation";
 import GoTop from "@/components/Layouts/GoTop";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${saira.variable}`}>
         {children}
         <AosAnimation />
+        <CookieConsent />
         <GoTop />
       </body>
     </html>

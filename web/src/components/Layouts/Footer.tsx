@@ -167,6 +167,18 @@ const Footer: React.FC<FooterProps> = ({ settings }) => {
                       <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
                     </li>
                   )}
+                  {contacts.ogrn && (
+                    <li>
+                      <i className="fa-solid fa-file-signature"></i>
+                      ОГРН {contacts.ogrn}
+                    </li>
+                  )}
+                  {contacts.inn && (
+                    <li>
+                      <i className="fa-solid fa-id-card"></i>
+                      ИНН {contacts.inn}
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

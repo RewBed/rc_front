@@ -75,6 +75,55 @@
   margin-left: 15px;
 }
 
+.main-banner-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.main-banner-content .main-banner-actions .btn-primary,
+.main-banner-content .main-banner-actions .btn-secondary {
+  margin: 0;
+}
+
+.cookie-consent {
+  align-items: center;
+  background: #18181b;
+  border-radius: 8px;
+  bottom: 18px;
+  box-shadow: 0 18px 50px rgba(24, 24, 27, 0.22);
+  color: #ffffff;
+  display: flex;
+  gap: 16px;
+  left: 18px;
+  max-width: min(520px, calc(100vw - 36px));
+  padding: 16px 18px;
+  position: fixed;
+  right: auto;
+  z-index: 9999;
+}
+
+.cookie-consent p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cookie-consent button {
+  background: #ff2c9c;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 11px 16px;
+}
+
 .single-blog-item .blog-post-content h3 {
   min-height: 72px;
 }
@@ -463,13 +512,32 @@
     max-height: 300px;
   }
 
-  .main-banner-content .btn-secondary {
-    margin-left: 0;
-    margin-top: 12px;
+  .main-banner-actions {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .main-banner-content .main-banner-actions .btn {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .main-banner-content .main-banner-title {
     font-size: 30px;
+  }
+
+  .cookie-consent {
+    align-items: stretch;
+    bottom: 12px;
+    flex-direction: column;
+    gap: 12px;
+    left: 12px;
+    max-width: calc(100vw - 24px);
+    padding: 14px;
+  }
+
+  .cookie-consent button {
+    width: 100%;
   }
 
   .service-insights {
