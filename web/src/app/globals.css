@@ -31,8 +31,15 @@
 }
 
 .artel-wordmark span {
-  color: inherit;
   display: block;
+}
+
+.artel-wordmark span:first-child {
+  color: var(--artel-ink);
+}
+
+.artel-wordmark span:last-child {
+  color: var(--artel-blue-700);
 }
 
 .single-footer-widget .logo .artel-wordmark {
@@ -47,6 +54,18 @@
 
 .navbar-area.navbar-style-2.is-sticky nav .navbar-brand.artel-brand {
   color: #18181b;
+}
+
+.navbar-area.navbar-style-2:not(.is-sticky)
+  .artel-wordmark
+  span:first-child {
+  color: #ffffff;
+}
+
+.navbar-area.navbar-style-2:not(.is-sticky)
+  .artel-wordmark
+  span:last-child {
+  color: #8acdf6;
 }
 
 .navbar-area.navbar-style-2 nav .navbar-nav .nav-item .dropdown-menu li a {
@@ -335,6 +354,18 @@
 
   .navbar-area nav .artel-wordmark {
     font-size: 22px;
+  }
+
+  .navbar-area.navbar-style-2:not(.is-sticky)
+    .artel-wordmark
+    span:first-child {
+    color: var(--artel-ink);
+  }
+
+  .navbar-area.navbar-style-2:not(.is-sticky)
+    .artel-wordmark
+    span:last-child {
+    color: var(--artel-blue-700);
   }
 
   .artel-hero {
