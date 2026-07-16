@@ -11,21 +11,15 @@ import "../../public/styles/responsive.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter, Saira } from "next/font/google";
+import { Manrope } from "next/font/google";
 import CookieConsent from "@/components/Common/CookieConsent";
 import AosAnimation from "@/components/Layouts/AosAnimation";
 import GoTop from "@/components/Layouts/GoTop";
 
-const inter = Inter({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const manrope = Manrope({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const saira = Saira({
-  subsets: ["latin"],
-  variable: "--font-saira",
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -42,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${saira.variable}`}>
+      <body className={manrope.variable}>
         {children}
         <AosAnimation />
         <CookieConsent />

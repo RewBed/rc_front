@@ -22,7 +22,7 @@
   color: inherit;
   display: inline-flex;
   flex-direction: column;
-  font-family: var(--font-inter);
+  font-family: var(--font-manrope);
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 0;
@@ -152,7 +152,7 @@
 
 .artel-hero-title {
   color: var(--artel-ink);
-  font-family: var(--font-inter);
+  font-family: var(--font-manrope);
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 0;

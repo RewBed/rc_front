@@ -45,13 +45,13 @@ This files table contents are outlined below >>>>>
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-inter);
+  font-family: var(--font-manrope);
   font-size: 15px;
   color: #646464;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
   color: #18181b;
   font-weight: bold;
 }
@@ -1094,10 +1094,10 @@ Main Banner CSS
   visibility: visible;
 }
 .slider-area ul li .tp-caption.NotGeneric-Title, .slider-area ul li .NotGeneric-Title {
-  font-family: var(--font-saira) !important;
+  font-family: var(--font-manrope) !important;
 }
 .slider-area ul li .tp-caption.NotGeneric-SubTitle, .slider-area ul li .NotGeneric-SubTitle {
-  font-family: var(--font-inter) !important;
+  font-family: var(--font-manrope) !important;
   font-size: 15px !important;
   font-weight: 500 !important;
   letter-spacing: 0 !important;
@@ -1755,7 +1755,7 @@ Quotes CSS
   position: relative;
   font-size: 32px;
   font-weight: 700;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
 }
 .quotes-content p::before {
   content: "";
@@ -3739,7 +3739,7 @@ blockquote p {
 blockquote cite {
   position: relative;
   padding-left: 17px;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
   font-weight: 600;
 }
 blockquote cite::before {
@@ -3878,7 +3878,7 @@ blockquote cite::before {
 }
 .comments-area .comment-author .fn {
   font-weight: 600;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
 }
 .comments-area .comment-author .says {
   display: none;
@@ -4260,7 +4260,7 @@ textarea.form-control {
 }
 .contact-sidebar .contact-item span {
   font-size: 18px;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
   font-weight: 600;
   display: block;
   margin-bottom: 10px;
@@ -4595,7 +4595,7 @@ Case Studies Details CSS
 .case-studies-information ul li span {
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
   color: #18181b;
   display: inline-block;
   margin-right: 4px;
@@ -4684,7 +4684,7 @@ Portfolio Details CSS
 .portfolio-information ul li span {
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
   color: #18181b;
   display: inline-block;
   margin-right: 4px;
@@ -4800,7 +4800,7 @@ FAQ CSS
   transition: all 0.5s ease;
   font-size: 18px;
   font-weight: 700;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
 }
 .faq-accordion .accordion-item .accordion-button:hover {
   background-color: #0f5cc0;
@@ -4830,7 +4830,7 @@ FAQ CSS
 .faq-contact h3 {
   margin-bottom: 35px;
   font-size: 24px;
-  font-family: var(--font-saira);
+  font-family: var(--font-manrope);
 }
 .faq-contact form .btn {
   margin-top: 10px;
