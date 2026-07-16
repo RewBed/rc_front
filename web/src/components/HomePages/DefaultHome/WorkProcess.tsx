@@ -23,7 +23,7 @@ const workProcessData: WorkProcessData[] = [
     title: "Как строим работу",
     shortText:
       "Фиксируем ожидания на старте, двигаемся по понятным этапам и оставляем после запуска не только код, но и управляемую систему.",
-    image: "/images/man-with-mobile.png",
+    image: "/images/man-with-mobile-blue.png",
     circleImage: "/images/circle.png",
 
     list: [
