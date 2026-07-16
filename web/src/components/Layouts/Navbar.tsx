@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MenuItem from "./MenuItem";
+import BrandWordmark from "./BrandWordmark";
 import { menus } from "../../../libs/menus";
 import { fallbackServices, type ServiceItem } from "@/lib/content-data";
 
@@ -72,7 +73,7 @@ const Navbar: React.FC = () => {
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand artel-brand">
-              ООО «Артель»
+              <BrandWordmark />
             </Link>
 
             {/* Toggle navigation */}

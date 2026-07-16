@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import BrandWordmark from "./BrandWordmark";
 import {
   contactSettings,
   fallbackServices,
@@ -44,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ settings }) => {
               >
                 <div className="logo">
                   <Link href="/" className="artel-brand">
-                    {contacts.shortName}
+                    <BrandWordmark />
                   </Link>
                 </div>
 
