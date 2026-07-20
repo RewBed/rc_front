@@ -18,7 +18,7 @@ export default async function ContactPage() {
         BGImage="/images/page-banner-contacts-artel.jpg"
       />
       <ContactInfo contacts={contacts} />
-      <ContactForm email={contacts.email} />
+      <ContactForm />
       <Footer settings={settings} />
     </>
   );
