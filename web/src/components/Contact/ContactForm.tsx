@@ -81,7 +81,7 @@ export default function ContactForm() {
         throw new Error(
           response.status === 429
             ? "Слишком много попыток. Подождите несколько минут."
-            : "Не удалось отправить заявку. Попробуйте еще раз или напишите нам на tech@artelcode.ru.",
+            : "Не удалось отправить заявку. Попробуйте еще раз или напишите нам на support@artelcode.ru.",
         );
       }
 

@@ -34,8 +34,6 @@ const MainBanner: React.FC = () => (
   <section className="artel-hero">
     <div className="container artel-hero-container">
       <div className="artel-hero-content">
-        <span className="artel-hero-eyebrow">ООО «Артель»</span>
-
         <h1 className="artel-hero-title">
           <span>Цифровые решения</span>
           <span>для бизнеса</span>

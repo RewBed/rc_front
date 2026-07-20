@@ -625,7 +625,11 @@ export const fallbackSettings: Setting[] = [
       "191015, город Санкт-Петербург, Кавалергардская ул., д. 12 литера Б, помещ. 11-н",
   },
   { category: "contacts", key: "phone", value: null },
-  { category: "contacts", key: "email", value: null },
+  {
+    category: "contacts",
+    key: "email",
+    value: "support@artelcode.ru",
+  },
 ];
 
 export function settingValue(
@@ -655,6 +659,7 @@ export function contactSettings(settings: Setting[]): ContactSettings {
     ogrn: settingValue(settings, "details", "ogrn"),
     legalAddress,
     phone: settingValue(settings, "contacts", "phone"),
-    email: settingValue(settings, "contacts", "email"),
+    email:
+      settingValue(settings, "contacts", "email") || "support@artelcode.ru",
   };
 }
