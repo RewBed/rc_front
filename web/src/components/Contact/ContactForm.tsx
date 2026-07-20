@@ -9,6 +9,34 @@ import {
 import AltchaWidget from "./AltchaWidget";
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001/api";
+const EMAIL_PATTERN = "[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}";
+const PHONE_PATTERN = "\\+7 \\([0-9]{3}\\) [0-9]{3}-[0-9]{2}-[0-9]{2}";
+
+const formatRussianPhone = (value: string) => {
+  let digits = value.replace(/\D/g, "");
+  if (!digits) return "";
+
+  if (digits.startsWith("8")) digits = `7${digits.slice(1)}`;
+  if (!digits.startsWith("7")) digits = `7${digits}`;
+
+  const nationalNumber = digits.slice(1, 11);
+  let formatted = "+7";
+  if (nationalNumber.length > 0) {
+    formatted += ` (${nationalNumber.slice(0, 3)}`;
+  }
+  if (nationalNumber.length >= 3) formatted += ")";
+  if (nationalNumber.length > 3) {
+    formatted += ` ${nationalNumber.slice(3, 6)}`;
+  }
+  if (nationalNumber.length > 6) {
+    formatted += `-${nationalNumber.slice(6, 8)}`;
+  }
+  if (nationalNumber.length > 8) {
+    formatted += `-${nationalNumber.slice(8, 10)}`;
+  }
+
+  return formatted;
+};
 
 type ContactFormState = {
   name: string;
@@ -42,7 +70,13 @@ export default function ContactForm() {
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
+    const nextValue =
+      name === "phone"
+        ? formatRussianPhone(value)
+        : name === "email"
+          ? value.replace(/\s/g, "")
+          : value;
+    setForm((current) => ({ ...current, [name]: nextValue }));
     if (status.type !== "idle") setStatus({ type: "idle" });
   };
 
@@ -149,6 +183,9 @@ export default function ContactForm() {
                     onChange={handleChange}
                     maxLength={320}
                     autoComplete="email"
+                    inputMode="email"
+                    pattern={EMAIL_PATTERN}
+                    title="Введите email в формате name@example.com"
                     required
                   />
                 </div>
@@ -159,12 +196,15 @@ export default function ContactForm() {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Телефон"
+                    placeholder="+7 (___) ___-__-__"
                     className="form-control"
                     value={form.phone}
                     onChange={handleChange}
-                    maxLength={50}
+                    maxLength={18}
                     autoComplete="tel"
+                    inputMode="tel"
+                    pattern={PHONE_PATTERN}
+                    title="Введите телефон в формате +7 (999) 999-99-99"
                   />
                 </div>
               </div>
