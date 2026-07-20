@@ -4854,50 +4854,6 @@ Footer CSS
   font-weight: bold;
   color: #18181b;
 }
-.single-footer-widget .social-links {
-  padding: 0;
-  margin: 20px 0 0;
-  list-style-type: none;
-}
-.single-footer-widget .social-links li {
-  display: inline-block;
-  margin-right: 2px;
-}
-.single-footer-widget .social-links li a {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  background-color: #4a4a4a;
-  border-radius: 50%;
-  color: #ffffff;
-  position: relative;
-  z-index: 1;
-  font-size: 13px;
-  margin-right: 5px;
-}
-.single-footer-widget .social-links li a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  margin: 0 auto;
-  background: linear-gradient(to left top, #0f5cc0, #176fd1, #2488e3, #4aa7ed, #8acdf6);
-  width: 0;
-  height: 0;
-  z-index: -1;
-  border-radius: 50%;
-  transition: all 0.5s ease;
-}
-.single-footer-widget .social-links li a:hover::before, .single-footer-widget .social-links li a:focus::before {
-  width: 100%;
-  height: 100%;
-}
-.single-footer-widget .social-links li:last-child {
-  margin: 0;
-}
 .single-footer-widget h3 {
   position: relative;
   margin-bottom: 25px;

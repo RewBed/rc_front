@@ -54,29 +54,6 @@ const Footer: React.FC<FooterProps> = ({ settings }) => {
                   SIP-телефония, маркетинг и дизайн для бизнеса и проектов
                   с формальными требованиями.
                 </p>
-
-                <ul className="social-links">
-                  <li>
-                    <a href="https://t.me/" target="_blank">
-                      <i className="fa-brands fa-telegram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://vk.com/" target="_blank">
-                      <i className="fa-brands fa-vk"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://linkedin.com/" target="_blank">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/" target="_blank">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
 

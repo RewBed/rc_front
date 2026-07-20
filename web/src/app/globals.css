@@ -20,26 +20,30 @@
 
 .artel-wordmark {
   color: inherit;
-  display: inline-flex;
-  flex-direction: column;
+  display: inline-grid;
   font-family: var(--font-manrope);
   font-size: 24px;
   font-weight: 800;
+  grid-template-columns: max-content;
   letter-spacing: 0;
   line-height: 0.82;
   text-align: left;
 }
 
-.artel-wordmark span {
+.artel-wordmark__artel {
+  color: var(--artel-ink);
   display: block;
 }
 
-.artel-wordmark span:first-child {
-  color: var(--artel-ink);
+.artel-wordmark__code {
+  color: var(--artel-blue-700);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.artel-wordmark span:last-child {
-  color: var(--artel-blue-700);
+.artel-wordmark__code > span {
+  display: block;
 }
 
 .single-footer-widget .logo .artel-wordmark {
@@ -57,14 +61,12 @@
 }
 
 .navbar-area.navbar-style-2:not(.is-sticky)
-  .artel-wordmark
-  span:first-child {
+  .artel-wordmark__artel {
   color: #ffffff;
 }
 
 .navbar-area.navbar-style-2:not(.is-sticky)
-  .artel-wordmark
-  span:last-child {
+  .artel-wordmark__code {
   color: #8acdf6;
 }
 
@@ -357,14 +359,12 @@
   }
 
   .navbar-area.navbar-style-2:not(.is-sticky)
-    .artel-wordmark
-    span:first-child {
+    .artel-wordmark__artel {
     color: var(--artel-ink);
   }
 
   .navbar-area.navbar-style-2:not(.is-sticky)
-    .artel-wordmark
-    span:last-child {
+    .artel-wordmark__code {
     color: var(--artel-blue-700);
   }
 
