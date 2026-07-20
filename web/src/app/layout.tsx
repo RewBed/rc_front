@@ -12,6 +12,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import CookieConsent from "@/components/Common/CookieConsent";
 import AosAnimation from "@/components/Layouts/AosAnimation";
 import GoTop from "@/components/Layouts/GoTop";
@@ -41,6 +42,10 @@ export default function RootLayout({
         <AosAnimation />
         <CookieConsent />
         <GoTop />
+        <Script
+          src="https://code.jivo.ru/widget/63VbwHXer3"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
